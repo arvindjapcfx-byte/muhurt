@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Today's Script</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+      background: #fff;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe id="content-frame"></iframe>
+
+  <script>
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yyyy = today.getFullYear();
+
+    const fileName = `${dd}_${mm}_${yyyy}_script.html`;
+
+    const frame = document.getElementById('content-frame');
+    frame.src = fileName;
+
+    // Adjust frame height after load
+    frame.addEventListener('load', () => {
+      try {
+        const frameDoc = frame.contentDocument || frame.contentWindow.document;
+        const height = frameDoc.documentElement.scrollHeight;
+        frame.style.height = height + 'px';
+      } catch (e) {
+        console.warn('Could not auto-resize iframe:', e);
+      }
+    });
+  </script>
+
+</body>
+</html>
