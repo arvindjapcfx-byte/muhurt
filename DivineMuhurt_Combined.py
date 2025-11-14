@@ -871,5 +871,5 @@ if __name__ == "__main__":
 
     current_date = start_date
     while current_date <= end_date:
-        run_for_date(current_date.strftime("%d/%m/%Y"), "00:00", "23:59")
+        run_for_date(current_date.strftime("%d/%m/%Y"), "00:00", "00:10")
         current_date += timedelta(days=1)        
