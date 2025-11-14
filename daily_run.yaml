@@ -1,0 +1,26 @@
+name: Run Python Daily
+
+on:
+  schedule:
+    - cron: "55 19 * * *"  # Runs every day at 17:30 UTC
+  workflow_dispatch:       # Lets you run manually
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Run the Python script
+      run: python test.py
