@@ -853,6 +853,7 @@ def run_for_date(input_date,start_time, end_time):
 # ===========================
 # RUN
 # ===========================
+'''
 if __name__ == "__main__":
     start_date = datetime.strptime("14/11/2025", "%d/%m/%Y")
     end_date = datetime.strptime("14/11/2025", "%d/%m/%Y")
@@ -861,3 +862,15 @@ if __name__ == "__main__":
     while current_date <= end_date:
         run_for_date(current_date.strftime("%d/%m/%Y"), "00:00", "23:59")
         current_date += timedelta(days=1)    
+'''
+
+if __name__ == "__main__":
+    tomorrow = datetime.today() + timedelta(days=1)
+
+    start_date = tomorrow
+    end_date = tomorrow
+
+    current_date = start_date
+    while current_date <= end_date:
+        run_for_date(current_date.strftime("%d/%m/%Y"), "00:00", "23:59")
+        current_date += timedelta(days=1)        
