@@ -865,7 +865,7 @@ if __name__ == "__main__":
 '''
 
 if __name__ == "__main__":
-    tomorrow = datetime.today() '''+ timedelta(days=1)'''
+    tomorrow = datetime.today()
 
     start_date = tomorrow
     end_date = tomorrow
