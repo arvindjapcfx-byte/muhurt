@@ -5,6 +5,9 @@ on:
     - cron: "30 17 * * *"  # Runs every day at 1:25 AM IST
   workflow_dispatch:       # Lets you run manually
 
+permissions:
+  contents: write
+
 jobs:
   run-python:
     runs-on: ubuntu-latest
