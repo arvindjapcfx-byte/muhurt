@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Muhurt Results - 02/12/2025</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f8f9fa;
+            }
+            header {
+                color: rgb(0, 0, 0);
+                text-align: center;
+                padding: 20px 10px;
+            }
+            h1 {
+                text-align: center;
+                color: #1f2937;
+                border-bottom: 3px solid #2563eb;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+            }
+            h2 {
+                color: #2563eb;
+                margin-top: 40px;
+                margin-bottom: 20px;
+                font-size: 22px;
+                border-left: 6px solid #2563eb;
+                padding-left: 10px;
+            }
+            .container {
+                display: flex;
+                flex-direction: column; /* Vertical stack */
+                gap: 40px;
+                align-items: left;
+            }
+            .list {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                padding: 20px;
+                width: 100%;
+            }
+            .item {
+                background: #f9fafb;
+                border-left: 5px solid #3b82f6;
+                margin-bottom: 15px;
+                border-radius: 8px;
+                padding: 15px 20px;
+                transition: 0.3s;
+                font-weight: bold;
+                color: #374151;
+                font-size: 30px;                
+            }
+            .uitem {
+                background: #f9fafb;
+                border-left: 5px solid #ea1919;
+                margin-bottom: 15px;
+                border-radius: 8px;
+                padding: 15px 20px;
+                transition: 0.3s;
+                font-weight: bold;
+                color: #374151;
+                font-size: 30px;
+            }            
+            .highlight {
+                background-color: #9af0ab !important;
+                font-weight: bold;
+            }
+            .time {
+                color: #555;
+                float: right;
+            }
+            #clock {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #374151;
+            }       
+     /* Astrology chart styles */
+            .chart {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
+                grid-template-rows: repeat(4, 1fr);
+                width: 100%; /* Fill available width */
+                aspect-ratio: 2 / 1; /* Keep it square */
+                border: 3px solid #000;
+                background-color: white;
+                border-radius: 20px; /* <-- rounded corners */
+                overflow: hidden; /* hides cell borders at the corners */                
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                margin-top: 40px;
+            }
+
+            .cell {
+                border: 1px solid #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: 1.2vw; /* Scales with width */
+                color: #1f2937;
+                position: relative;
+            }
+
+            .cell span {
+                position: centered;
+                top: 5px;
+                left: 5px;
+                font-size: 2.8vw;
+                font-weight: bold;
+                color: #555;
+            }
+
+            .merged {
+                grid-column: 2 / span 2;
+                grid-row: 2 / span 2;
+                background-color: #f3f4f6;
+                border: 2px solid #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.5vw;
+                font-weight: bold;
+            }
+
+
+            .chart-container {
+                text-align: center;
+            }
+            .chart-container h2 {
+                border-left: none;
+                margin-bottom: 10px;
+            }            
+            
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <p id="toggleHide" 
+            style="position: absolute; top: 20px; left: 30px; font-size: 24px; color: #2563eb; cursor: pointer; font-weight: bold;">
+            Full
+            </p>
+
+            <h1>Muhurt 02/12/2025 <p id="clock" style="font-size: 40px; color: #374151; margin-top: 10px;"></p></h1>
+        </header>
+        <!--
+        <div class="chart-container">
+            <h2>Astrology Chart</h2>
+            <div class="chart">
+            <div id="12" class="cell"><span>12</span></div>
+            <div id="1" class="cell"><span>1</span></div>
+            <div id="2" class="cell"><span>2</span></div>
+            <div id="3" class="cell"><span>3</span></div>
+            <div id="11" class="cell"><span>11</span></div>
+            <div class="merged" id="chartcenter">Kocharam</div>
+            <div id="4" class="cell"><span>4</span></div>
+            <div id="10" class="cell"><span>10</span></div>
+            <div id="5" class="cell"><span>5</span></div>
+            <div id="9" class="cell"><span>9</span></div>
+            <div id="8" class="cell"><span>8</span></div>
+            <div id="7" class="cell"><span>7</span></div>
+            <div id="6" class="cell"><span>6</span></div>
+        </div>
+        -->
+              
+        <div class="container">
+            <div class="list" id="selected">
+                <h2>Selected Muhurt</h2>
+                <div class="item" data-time="03:34">Ve / Ma / Su&nbsp&nbsp|&nbsp&nbsp03:34<span style="float: right; color: blue;"></span></div><div class="item" data-time="04:26">Ve / Ra / Su&nbsp&nbsp|&nbsp&nbsp04:26<span style="float: right; color: blue;">5_9</span></div><div class="item" data-time="04:44">Ve / Ju / Sa&nbsp&nbsp|&nbsp&nbsp04:44<span style="float: right; color: blue;">4_11</span></div><div class="item" data-time="05:14">Ve / Ju / Su&nbsp&nbsp|&nbsp&nbsp05:14<span style="float: right; color: blue;"></span></div><div class="item" data-time="10:10">Sa / Su / Ve&nbsp&nbsp|&nbsp&nbsp10:10<span style="float: right; color: blue;">4_11</span></div><div class="item" data-time="10:26">Sa / Mo / Ra&nbsp&nbsp|&nbsp&nbsp10:26<span style="float: right; color: blue;">2_11</span></div><div class="item" data-time="11:18">Sa / Ma / Ju&nbsp&nbsp|&nbsp&nbsp11:18<span style="float: right; color: blue;">3_11</span></div><div class="item" data-time="12:34">Sa / Ra / Su&nbsp&nbsp|&nbsp&nbsp12:34<span style="float: right; color: blue;">5_9</span></div><div class="item" data-time="12:36">Sa / Ra / Mo&nbsp&nbsp|&nbsp&nbsp12:36<span style="float: right; color: blue;">2_9_10</span></div><div class="item" data-time="12:42">Sa / Ju / Ju&nbsp&nbsp|&nbsp&nbsp12:42<span style="float: right; color: blue;"></span></div><div class="item" data-time="13:14">Sa / Ju / Mo&nbsp&nbsp|&nbsp&nbsp13:14<span style="float: right; color: blue;">2_11</span></div><div class="item" data-time="13:28">Ju / Sa / Sa&nbsp&nbsp|&nbsp&nbsp13:28<span style="float: right; color: blue;"></span></div><div class="item" data-time="13:44">Ju / Sa / Ve&nbsp&nbsp|&nbsp&nbsp13:44<span style="float: right; color: blue;">3_11</span></div><div class="item" data-time="14:12">Ju / Me / Me&nbsp&nbsp|&nbsp&nbsp14:12<span style="float: right; color: blue;">11</span></div><div class="item" data-time="18:50">Me / Ma / Me&nbsp&nbsp|&nbsp&nbsp18:50<span style="float: right; color: blue;">11</span></div><div class="item" data-time="20:08">Me / Ra / Mo&nbsp&nbsp|&nbsp&nbsp20:08<span style="float: right; color: blue;">5_9</span></div><div class="item" data-time="20:14">Me / Ra / Ma&nbsp&nbsp|&nbsp&nbsp20:14<span style="float: right; color: blue;"></span></div>
+            </div>
+            <div class="list" id="unselected">
+                <h2>Unselected Muhurt</h2>
+                <div class="uitem" data-time="00:00">Su / Ke / Me|00:00 - ['B_8th', 'C_8th', 3, 5]<span style="float: right; color: blue;"></span></div><div class="uitem" data-time="00:50">Su / Ve / Me|00:50 - ['B_8th', 'C_8th', 3, 5]<span style="float: right; color: blue;">3_11</span></div><div class="uitem" data-time="01:02">Su / Su / Su|01:02 - [3, 5]<span style="float: right; color: blue;">3_11</span></div><div class="uitem" data-time="01:12">Su / Su / Ra|01:12 - [3, 5]<span style="float: right; color: blue;">4_11</span></div><div class="uitem" data-time="01:34">Me / Su / Me|01:34 - [2, 5]<span style="float: right; color: blue;">2_11</span></div><div class="uitem" data-time="01:54">Me / Mo / Mo|01:54 - [2, 5]<span style="float: right; color: blue;"></span></div><div class="uitem" data-time="01:58">Me / Mo / Ma|01:58 - ['68_BC', 2, 5]<span style="float: right; color: blue;">3_11</span></div><div class="uitem" data-time="02:26">Me / Mo / Me|02:26 - [2, 5]<span style="float: right; color: blue;">11</span></div><div class="uitem" data-time="02:32">Me / Mo / Ke|02:32 - [2, 5]<span style="float: right; color: blue;">2_11</span></div><div class="uitem" data-time="05:44">Ma / Sa / Me|05:44 - ['68_BC', 'A_8th', 2]<span style="float: right; color: blue;">3_11</span></div><div class="uitem" data-time="06:16">Ma / Sa / Ra|06:16 - ['A_8th', 2]<span style="float: right; color: blue;">4_11</span></div><div class="uitem" data-time="06:32">Ma / Me / Me|06:32 - ['A_8th', 2]<span style="float: right; color: blue;">11</span></div><div class="uitem" data-time="07:22">Ma / Me / Sa|07:22 - ['68_BC', 'A_8th', 2]<span style="float: right; color: blue;">3_11</span></div><div class="uitem" data-time="07:34">Ju / Ke / Ve|07:34 - [2, 8]<span style="float: right; color: blue;"></span></div><div class="uitem" data-time="07:52">Ju / Ke / Ma|07:52 - [2, 8]<span style="float: right; color: blue;">4_11</span></div><div class="uitem" data-time="07:56">Ju / Ke / Ra|07:56 - ['68_AC', 2, 8]<span style="float: right; color: blue;">2_11</span></div><div class="uitem" data-time="08:28">Ju / Ve / Ve|08:28 - [2, 8]<span style="float: right; color: blue;"></span></div><div class="uitem" data-time="08:38">Ju / Ve / Su|08:38 - [2, 8]<span style="float: right; color: blue;">5_9</span></div><div class="uitem" data-time="09:04">Ju / Ve / Sa|09:04 - [2, 8]<span style="float: right; color: blue;">3_11</span></div><div class="uitem" data-time="10:22">Sa / Mo / Ma|10:22 - ['68_BC']<span style="float: right; color: blue;"></span></div><div class="uitem" data-time="11:52">Sa / Ma / Mo|11:52 - ['68_BC']<span style="float: right; color: blue;">2_11</span></div><div class="uitem" data-time="12:04">Sa / Ra / Ju|12:04 - ['68_BC']<span style="float: right; color: blue;">2_5_11</span></div><div class="uitem" data-time="12:18">Sa / Ra / Me|12:18 - ['68_AC']<span style="float: right; color: blue;">4_11</span></div><div class="uitem" data-time="14:00">Ju / Sa / Ra|14:00 - ['68_AC']<span style="float: right; color: blue;">4_11</span></div><div class="uitem" data-time="14:58">Ma / Ke / Ke|14:58 - [2, 3]<span style="float: right; color: blue;">2_5_11</span></div><div class="uitem" data-time="15:16">Ma / Ke / Ra|15:16 - [2, 3]<span style="float: right; color: blue;">2_11</span></div><div class="uitem" data-time="15:30">Ma / Ke / Sa|15:30 - ['68_BC', 2, 3]<span style="float: right; color: blue;"></span></div><div class="uitem" data-time="16:02">Ma / Ve / Ra|16:02 - [2, 3]<span style="float: right; color: blue;">4_11</span></div><div class="uitem" data-time="16:16">Ma / Ve / Sa|16:16 - [2, 3]<span style="float: right; color: blue;"></span></div><div class="uitem" data-time="16:52">Ve / Su / Ju|16:52 - ['B_8th', 'C_8th', 3, 6]<span style="float: right; color: blue;"></span></div><div class="uitem" data-time="17:42">Ve / Mo / Ju|17:42 - ['68_AB', 'B_8th', 'C_8th', 3, 6]<span style="float: right; color: blue;">3_11</span></div><div class="uitem" data-time="18:10">Ve / Mo / Ve|18:10 - ['68_AB', '68_BC', 3, 6]<span style="float: right; color: blue;">2_11</span></div><div class="uitem" data-time="19:12">Me / Ma / Su|19:12 - ['B_8th', 'C_8th']<span style="float: right; color: blue;">3_11</span></div><div class="uitem" data-time="21:36">Mo / Sa / Ve|21:36 - ['68_AC', 'B_8th', 'C_8th', 3]<span style="float: right; color: blue;"></span></div><div class="uitem" data-time="22:24">Mo / Me / Ve|22:24 - ['68_AC', 'B_8th', 'C_8th', 3]<span style="float: right; color: blue;">3_11</span></div><div class="uitem" data-time="23:40">Su / Ke / Ju|23:40 - ['B_8th', 'C_8th', 3, 5]<span style="float: right; color: blue;">2_11</span></div><div class="uitem" data-time="23:56">Su / Ke / Me|23:56 - ['B_8th', 'C_8th', 3, 5]<span style="float: right; color: blue;"></span></div>
+            </div>
+                                    
+
+        </div>
+        <!-- Astrology Box 
+        <div class="chart-container">
+            <h2>Astrology Chart</h2>
+            <div class="chart">
+            <div id="12" class="cell"><span>12</span></div>
+            <div id="1" class="cell"><span>1</span></div>
+            <div id="2" class="cell"><span>2</span></div>
+            <div id="3" class="cell"><span>3</span></div>
+            <div id="11" class="cell"><span>11</span></div>
+            <div class="merged">CENTER</div>
+            <div id="4" class="cell"><span>4</span></div>
+            <div id="10" class="cell"><span>10</span></div>
+            <div id="5" class="cell"><span>5</span></div>
+            <div id="9" class="cell"><span>9</span></div>
+            <div id="8" class="cell"><span>8</span></div>
+            <div id="7" class="cell"><span>7</span></div>
+            <div id="6" class="cell"><span>6</span></div>
+        </div>
+        -->
+
+        <script>
+            let hideMode = true; // start in hide mode (only future items shown)
+
+            
+            function hidePastItems() {
+                const nowUTC = new Date();
+                const istOffset = 5.5 * 60 * 60 * 1000; // IST = UTC + 5:30
+                const istTime = new Date(nowUTC.getTime() + istOffset);
+                const currentMinutes = istTime.getUTCHours() * 60 + istTime.getUTCMinutes();
+
+                document.querySelectorAll(".item, .uitem").forEach(div => {
+                    const timeText = div.dataset.time;
+                    if (!timeText) return;
+                    const [hours, minutes] = timeText.split(":").map(Number);
+                    const divMinutes = hours * 60 + minutes;
+
+                    if (hideMode && currentMinutes > divMinutes + 15) {
+                        div.style.display = "none"; // hide past + 15 min
+                    } else {
+                        div.style.display = ""; // show all
+                    }
+                });
+            }
+            
+            function toggleHideMode() {
+                hideMode = !hideMode;
+                const toggleBtn = document.getElementById("toggleHide");
+                toggleBtn.textContent = hideMode ? "Full" : "Live";
+                hidePastItems();
+            }
+
+        
+            function updateISTClock() {
+                const nowUTC = new Date();
+                const istOffset = 5.5 * 60 * 60 * 1000; // IST = UTC + 5:30
+                const istTime = new Date(nowUTC.getTime() + istOffset);
+        
+                const hours = String(istTime.getUTCHours()).padStart(2, '0');
+                const minutes = String(istTime.getUTCMinutes()).padStart(2, '0');
+                const seconds = String(istTime.getUTCSeconds()).padStart(2, '0');
+        
+                document.getElementById("clock").textContent =
+                    `${hours}:${minutes}:${seconds}`;
+            }
+
+            function highlightNextInSection(sectionId) {
+                const now = new Date();
+                const currentMinutes = now.getHours() * 60 + now.getMinutes();
+                let nextItem = null;
+                let smallestDiff = Infinity;
+
+                
+                //const items = document.querySelectorAll(`#${sectionId} .item`);
+                const items = document.querySelectorAll(`.item`);
+
+                items.forEach(el => {
+                    const timeMatch = el.dataset.time?.split(':');
+                    if (!timeMatch || timeMatch.length < 2) return;
+                    const hrs = parseInt(timeMatch[0]);
+                    const mins = parseInt(timeMatch[1]);
+                    const totalMins = hrs * 60 + mins;
+                    const diff = totalMins - currentMinutes;
+                    if (diff > 0 && diff < smallestDiff) {
+                        smallestDiff = diff;
+                        nextItem = el;
+                    }
+                });
+
+                items.forEach(el => el.classList.remove('highlight'));
+                if (nextItem) {
+                    nextItem.classList.add('highlight');
+                }
+            }
+
+            function highlightNextMuhurt() {
+                highlightNextInSection('selected');
+                //highlightNextInSection('unselected');
+            }
+
+            window.onload = function() {
+                document.getElementById("toggleHide").addEventListener("click", toggleHideMode);
+
+                hidePastItems();          
+                highlightNextMuhurt();    
+                updateISTClock();
+
+                setInterval(updateISTClock, 1000);
+                setInterval(highlightNextMuhurt, 60000);
+                setInterval(hidePastItems, 60000); // auto-refresh every minute
+            };
+
+        </script>        
+
+    </body>
+    </html>
