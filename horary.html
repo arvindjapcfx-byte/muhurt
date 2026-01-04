@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profit Page</title>
+
+    <!-- Mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 16px;
+            margin: 0;
+            background: #f4f6f8;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        textarea {
+            width: 100%;
+            height: 140px;
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background: #28a745;
+            color: #fff;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        button:active {
+            background: #218838;
+        }
+
+        .output {
+            margin-top: 16px;
+            padding: 12px;
+            background: #f1f3f5;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        @media (min-width: 768px) {
+            textarea {
+                height: 160px;
+            }
+            button {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+
+    <button onclick="showProfit()">Profit</button>
+
+    <div class="output" id="result"></div>
+</div>
+
+<script>
+    function showProfit() {
+        const now = new Date();
+
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = String(now.getFullYear()).slice(-2);
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+
+        const formattedTime = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+        const randomNumber = Math.floor(Math.random() * 249) + 1;
+
+        document.getElementById("result").innerHTML =
+            `🕒 ${formattedTime}<br>🎯 Random Number: ${randomNumber}`;
+    }
+</script>
+
+</body>
+</html>
