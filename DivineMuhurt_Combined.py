@@ -154,7 +154,7 @@ def run_for_date(input_date,start_time, end_time):
             asc_nakshatra_lord_details = get_palnet_details(data, asc_nakshatra_lord)
 
             asc_rashi_lord_significator_NL =  asc_rashi_lord_details["planet_details"].get("nakshatra_lord") if asc_rashi_lord_details["planet_details"] else None
-            asc_nakshatra_lord_significator_NL =  asc_sub_lord_details["planet_details"].get("nakshatra_lord") if asc_nakshatra_lord_details["planet_details"] else None           
+            asc_nakshatra_lord_significator_NL =  asc_nakshatra_lord_details["planet_details"].get("nakshatra_lord") if asc_nakshatra_lord_details["planet_details"] else None           
             asc_sub_lord_significator_NL =  asc_sub_lord_details["planet_details"].get("nakshatra_lord") if asc_sub_lord_details["planet_details"] else None
 
             asc_rashi_lord_Planet_house =  asc_rashi_lord_details["planet_details"].get("house") if asc_rashi_lord_details["planet_details"] else None
